@@ -34,7 +34,7 @@ jobs:
             - name: unit testing
               run: npm test
             
-            - uses: actions/upload-artificat@v4
+            - uses: actions/upload-artifact@v4
               with:
                 name: moch-test-result
                 path: test-results.xml
