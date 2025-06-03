@@ -1,0 +1,16 @@
+# optional
+name: first wf
+
+#pull_request
+#workflow_dispatch
+#push
+on: workflow_dispatch
+
+jobs:
+    first-job:
+        # OS, must specify tag
+        runs-on: ubuntu-latest
+        # functions you'd like to run
+        steps:
+            - name: print my name
+              run: echo "ITI"
