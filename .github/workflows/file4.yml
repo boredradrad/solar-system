@@ -35,7 +35,37 @@ jobs:
               run: npm test
             
             - uses: actions/upload-artifact@v4
+              if: failure() || success()
               with:
                 name: moch-test-result
                 path: test-results.xml
+
+
+
+   code-coverage:
+        name: Unit Testing
+
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Setup node
+              uses: actions/setup-node@v4
+              with:
+                node-version: 20
+            
+            - name: install npm
+              run: npm install
+
+            - name: unit testing
+              run: npm run coverage
+            
+            - uses: actions/upload-artifact@v4
+              if: failure() || success()
+              with:
+                name: code-coverage-result
+                path: coverage
+                retention-days: 5
 
