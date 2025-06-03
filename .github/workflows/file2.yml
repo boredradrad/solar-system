@@ -4,7 +4,7 @@ name: second wf
 #pull_request
 #workflow_dispatch
 #push
-on: workflow_dispatch
+on: pull_request
 
 jobs:
     first-job:
